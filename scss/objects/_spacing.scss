@@ -34,9 +34,10 @@
     @include sizer("pb", $sizePrefixes, $breakpoint-xlarge-classname, "padding-bottom", $sizes);
     @include sizer("pr", $sizePrefixes, $breakpoint-xlarge-classname, "padding-right", $sizes);
     @include sizer("pl", $sizePrefixes, $breakpoint-xlarge-classname, "padding-left", $sizes);
+
 }
 
-@include media('medium') {
+@include media('medium-only') {
     @include sizer("mt", $sizePrefixes, $breakpoint-medium-classname, "margin-top", $sizes);
     @include sizer("mb", $sizePrefixes, $breakpoint-medium-classname, "margin-bottom", $sizes);
     @include sizer("mr", $sizePrefixes, $breakpoint-medium-classname, "margin-right", $sizes);
@@ -59,3 +60,4 @@
     @include sizer("pr", $sizePrefixes, $breakpoint-small-classname, "padding-right", $sizes);
     @include sizer("pl", $sizePrefixes, $breakpoint-small-classname, "padding-left", $sizes);
 }
+
