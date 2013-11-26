@@ -1,16 +1,17 @@
+
 @mixin spacing($margin: true, $padding: true) {
     @if $margin {
-        @include sizer("m", $sizePrefixes,  "margin-top", $sizes);
-        @include sizer("mb", $sizePrefixes,  "margin-bottom", $sizes);
-        @include sizer("mr", $sizePrefixes,  "margin-right", $sizes);
-        @include sizer("ml", $sizePrefixes,  "margin-left", $sizes);
+        @include sizer("mt", $sizePrefixes, $breakpoint-none, "margin-top", $sizes);
+        @include sizer("mb", $sizePrefixes, $breakpoint-none, "margin-bottom", $sizes);
+        @include sizer("mr", $sizePrefixes, $breakpoint-none, "margin-right", $sizes);
+        @include sizer("ml", $sizePrefixes, $breakpoint-none, "margin-left", $sizes);
     }
 
     @if $padding {
-        @include sizer("p", $sizePrefixes,  "padding-top", $sizes);
-        @include sizer("pb", $sizePrefixes,  "padding-bottom", $sizes);
-        @include sizer("pr", $sizePrefixes,  "padding-right", $sizes);
-        @include sizer("pl", $sizePrefixes,  "padding-left", $sizes);
+        @include sizer("pt", $sizePrefixes, $breakpoint-none, "padding-top", $sizes);
+        @include sizer("pb", $sizePrefixes, $breakpoint-none, "padding-bottom", $sizes);
+        @include sizer("pr", $sizePrefixes, $breakpoint-none, "padding-right", $sizes);
+        @include sizer("pl", $sizePrefixes, $breakpoint-none, "padding-left", $sizes);
     }
 }
 
@@ -22,10 +23,39 @@
  * ----------------------------------------------------------------------------
  */
 
-@include media('skinny') {
-    @include sizer("m-skinny", $sizePrefixes,  "margin-top", $sizes);
+@include media('xlarge') {
+    
+    @include sizer("mt", $sizePrefixes, $breakpoint-xlarge-classname, "margin-top", $sizes);
+    @include sizer("mb", $sizePrefixes, $breakpoint-xlarge-classname, "margin-bottom", $sizes);
+    @include sizer("mr", $sizePrefixes, $breakpoint-xlarge-classname, "margin-right", $sizes);
+    @include sizer("ml", $sizePrefixes, $breakpoint-xlarge-classname, "margin-left", $sizes);
+
+    @include sizer("pt", $sizePrefixes, $breakpoint-xlarge-classname, "padding-top", $sizes);
+    @include sizer("pb", $sizePrefixes, $breakpoint-xlarge-classname, "padding-bottom", $sizes);
+    @include sizer("pr", $sizePrefixes, $breakpoint-xlarge-classname, "padding-right", $sizes);
+    @include sizer("pl", $sizePrefixes, $breakpoint-xlarge-classname, "padding-left", $sizes);
 }
 
-@include media('mobile') {
-    @include sizer("m-small", $sizePrefixes,  "margin-top", $sizes);
+@include media('medium') {
+    @include sizer("mt", $sizePrefixes, $breakpoint-medium-classname, "margin-top", $sizes);
+    @include sizer("mb", $sizePrefixes, $breakpoint-medium-classname, "margin-bottom", $sizes);
+    @include sizer("mr", $sizePrefixes, $breakpoint-medium-classname, "margin-right", $sizes);
+    @include sizer("ml", $sizePrefixes, $breakpoint-medium-classname, "margin-left", $sizes);
+
+    @include sizer("pt", $sizePrefixes, $breakpoint-medium-classname, "padding-top", $sizes);
+    @include sizer("pb", $sizePrefixes, $breakpoint-medium-classname, "padding-bottom", $sizes);
+    @include sizer("pr", $sizePrefixes, $breakpoint-medium-classname, "padding-right", $sizes);
+    @include sizer("pl", $sizePrefixes, $breakpoint-medium-classname, "padding-left", $sizes);
+}
+
+@include media('small') {
+    @include sizer("mt", $sizePrefixes, $breakpoint-small-classname, "margin-top", $sizes);
+    @include sizer("mb", $sizePrefixes, $breakpoint-small-classname, "margin-bottom", $sizes);
+    @include sizer("mr", $sizePrefixes, $breakpoint-small-classname, "margin-right", $sizes);
+    @include sizer("ml", $sizePrefixes, $breakpoint-small-classname, "margin-left", $sizes);
+
+    @include sizer("pt", $sizePrefixes, $breakpoint-small-classname, "padding-top", $sizes);
+    @include sizer("pb", $sizePrefixes, $breakpoint-small-classname, "padding-bottom", $sizes);
+    @include sizer("pr", $sizePrefixes, $breakpoint-small-classname, "padding-right", $sizes);
+    @include sizer("pl", $sizePrefixes, $breakpoint-small-classname, "padding-left", $sizes);
 }

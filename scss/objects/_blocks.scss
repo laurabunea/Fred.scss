@@ -33,17 +33,22 @@ $blockSizes: $block--xxxs, $block--xxs, $block--xs, $block--s, $block--m, $block
     margin-top:1em;
 }
 
-@include sizer("block", $sizePrefixes,  "padding", $blockSizes);
+@include sizer("block", $sizePrefixes, $breakpoint-none, "padding", $blockSizes);
 
 /**
  * Responsive blocks
  * ----------------------------------------------------------------------------
  */
 
-@include media('medium') {
-    @include sizer("block-skinny", $sizePrefixes,  "padding", $sizes);
+@include media('xlarge') {
+    @include sizer("block", $sizePrefixes, $breakpoint-xlarge-classname, "padding", $sizes);
+}
+
+
+@include media('medium-only') {
+    @include sizer("block", $sizePrefixes, $breakpoint-medium-classname, "padding", $sizes);
 }
 
 @include media('small') {
-    @include sizer("block-small", $sizePrefixes,  "padding", $sizes);
+    @include sizer("block", $sizePrefixes, $breakpoint-small-classname, "padding", $sizes);
 }

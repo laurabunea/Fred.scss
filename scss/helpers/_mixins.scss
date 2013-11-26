@@ -106,10 +106,11 @@
 
 // Spacing helpers
 // ----------------------------------------------------------------------------
-@mixin sizer($class, $prefixes, $property, $array) {
+@mixin sizer($class, $sizePrefixes, $mediaQuery, $property, $array) {
+   
     $index:1;
-    @each $prefix in $prefixes {
-        .#{$class + $prefix} { #{$property}: nth($array, $index)  }
+    @each $size in $sizePrefixes {
+        .#{$class + $size + unquote($mediaQuery)} { #{$property}: nth($array, $index)  }
         $index: $index + 1;
     }
 }

@@ -87,16 +87,16 @@ $block--xxl:                    $bs--xl $bs--xxl;           // 48px 72px
 $block--xxxl:                   $bs--xxl $bs--xxxl;         // 72px 96px
 
 $sizePrefixes:
-    "--0",
-    "--xxxs",
-    "--xxs",
-    "--xs",
-    "--s",
-    "--m",
-    "--l",
-    "--xl",
-    "--xxl",
-    "--xxxl";
+    "-0",
+    "-xxxs",
+    "-xxs",
+    "-xs",
+    "-s",
+    "-m",
+    "-l",
+    "-xl",
+    "-xxl",
+    "-xxxl";
 
 $sizes:
     $bs--0,
@@ -109,6 +109,16 @@ $sizes:
     $bs--xl,
     $bs--xxl,
     $bs--xxxl;
+
+// Media queries prefixes
+// -----------------------------------------------------------------------------
+
+$breakpoint-none:"";
+$breakpoint-xlarge-classname: "--q-xlarge";
+$breakpoint-large-classname: "--q-large";
+$breakpoint-medium-classname: "--q-medium";
+$breakpoint-small-classname: "--q-small";
+
 
 
 // Media queries
