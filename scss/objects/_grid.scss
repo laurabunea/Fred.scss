@@ -57,7 +57,7 @@
         float: left;
     }
 
-@mixin grid-columns($name: $grid-column-name, $stops: 10, $fractional: false) {
+@mixin grid-columns($name: $grid-column-name, $stops: 10, $fractional: false, $breakpoint: $breakpoint-none) {
 
     @for $i from 1 to $stops {
         $colName: $i;
@@ -65,7 +65,7 @@
         @if $fractional {
             $colName: floor($width);
         }
-        .#{$name}-#{$colName} {
+        .#{$name}-#{$colName}#{$breakpoint} {
             width: #{$width + "%"};
         }
     }
@@ -83,26 +83,26 @@
 
 // Mobile first!
 @include media("") {
-    @include grid-columns($name: $grid-column-name-small, $stops: 4, $fractional: true);
-    @include grid-columns($name: $grid-column-name-small, $stops: 3, $fractional: true);
+    @include grid-columns($name: $grid-column-name, $stops: 4, $fractional: true, $breakpoint: $breakpoint-small-classname);
+    @include grid-columns($name: $grid-column-name, $stops: 3, $fractional: true, $breakpoint: $breakpoint-small-classname);
     .#{$grid-column-name-small} {
         width: 100%;
     }
 }
 
-@include media("medium") {
-    @include grid-columns($name: $grid-column-name-medium, $stops: 5, $fractional: true);
-    @include grid-columns($name: $grid-column-name-medium, $stops: 4, $fractional: true);
-    @include grid-columns($name: $grid-column-name-medium, $stops: 3, $fractional: true);
+@include media("medium-only") {
+    @include grid-columns($name: $grid-column-name, $stops: 5, $fractional: true, $breakpoint: $breakpoint-medium-classname);
+    @include grid-columns($name: $grid-column-name, $stops: 4, $fractional: true, $breakpoint: $breakpoint-medium-classname);
+    @include grid-columns($name: $grid-column-name, $stops: 3, $fractional: true, $breakpoint: $breakpoint-medium-classname);
     .#{$grid-column-name-medium} {
         width: 100%;
     }
 }
 
 @include media('large') {
-    @include grid-columns($name: $grid-column-name-large, $stops: 7, $fractional: true);
-    @include grid-columns($name: $grid-column-name-large, $stops: 4, $fractional: true);
-    @include grid-columns($name: $grid-column-name-large, $stops: 3, $fractional: true);
+    @include grid-columns($name: $grid-column-name, $stops: 10, $fractional: true, $breakpoint: $breakpoint-xlarge-classname);
+    @include grid-columns($name: $grid-column-name, $stops: 4, $fractional: true, $breakpoint: $breakpoint-xlarge-classname);
+    @include grid-columns($name: $grid-column-name, $stops: 3, $fractional: true, $breakpoint: $breakpoint-xlarge-classname);
     .#{$grid-column-name-large} {
         width: 100%;
     }
